@@ -1,9 +1,14 @@
 function scoring(...chance) {
   let score = 0;
   let curr = 0;
+  // let fillBall;
   // let chance = [];
   // let currThrow = 0;
   console.log(chance);
+  // let len = chance.length;
+  // if (chance[len - 2] === 10 || chance[len - 2] + chance[len - 3] === 10) {
+  //   fillBall = chance[len - 1];
+  // }
   function noOfFallenPins() {
     return chance[curr] + chance[curr + 1];
   }

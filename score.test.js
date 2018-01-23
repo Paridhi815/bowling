@@ -8,21 +8,40 @@ test('My scoring function should return an integer:', () => {
 test('Check The example given->', () => {
   expect(tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6)).toBe(90);
 });
+// test('Check spares>', () => {
+//   expect(tester(4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6)).toBe(90);
+// });
 
-test('Check with no spares and strikes->', () => {
-  expect(tester(4, 5, 3, 6, 4, 5, 3, 6, 4, 4, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(89);
+// test('Check with all strikes->', () => {
+//   expect(tester(10, 10, 10, 10, 10, 10, 10, 10, 10, 10)).toBe(105);
+// });
+
+
+describe('For Single permutations of strike spare combination:', function () {
+  it('Should work for a 1 spare', () => {
+    expect(tester(3, 6, 4, 5, 5, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(94);
+  });
+
+  it('Should work for a 1 strike', () => {
+    expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(100);
+  });
+
+  it('Should work for a 1 strike and 1 spare', () => {
+    expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 6, 4, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(105);
+  });
 });
 
-test('Check with 1 spare->', () => {
-  expect(tester(3, 6, 4, 5, 5, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(94);
-});
 
-test('Check with 1 strike->', () => {
-  expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(100);
-});
+describe('For Extreme Conditions:', function () {
+  it('Check with no spares and strikes->', () => {
+    expect(tester(4, 5, 3, 6, 4, 5, 3, 6, 4, 4, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(89);
+  });
 
-test('Check with 1 strike and 1 spare->', () => {
-  expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 6, 4, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(105);
+  it('Check with all strikes', () => {
+    expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(100);
+  });
+
+  it('Check With all spares', () => {
+    expect(tester(3, 6, 4, 5, 10, 3, 6, 4, 5, 6, 4, 4, 5, 3, 6, 4, 5, 3, 6)).toBe(105);
+  });
 });
-// console.log(tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6)===90);
-// console.log(tester(4, 5, 3, 6, 4, 5, 3, 6, 4, 4, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6));
