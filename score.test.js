@@ -1,10 +1,14 @@
-const tester = require('./score');
+let tester = require('./score');
 
-// test('Check The example given->', () => {
-//   expect(tester([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).toBe(90);
-// });
-console.log(tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6) === 90);
-//
-// test('SFor Another case->', () => {
-//   expect(disp()).not.toBe('HELLO 6');
-// });
+
+test('My scoring function should return an integer:', () => {
+  expect(typeof tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6)).toBe('number');
+});
+
+test('Check The example given->', () => {
+  expect(tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6)).toBe(90);
+});
+
+
+// console.log(tester(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6)===90);
+// console.log(tester(4, 5, 3, 6, 4, 5, 3, 6, 4, 4, 3, 6, 4, 5, 3, 6, 4, 5, 3, 6));
